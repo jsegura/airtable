@@ -39,6 +39,11 @@ func (grc *GetRecordsConfig) WithFilterFormula(filterFormula string) *GetRecords
 	return grc
 }
 
+func (grc *GetRecordsConfig) WithOffset(offset string) *GetRecordsConfig {
+	grc.params.Add("offset", offset)
+	return grc
+}
+
 // WithSort add sorting to request
 func (grc *GetRecordsConfig) WithSort(sortQueries ...struct {
 	fieldName string
